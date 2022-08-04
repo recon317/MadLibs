@@ -2,7 +2,7 @@ from logging import BufferingFormatter
 import re
 from pathlib import Path
 
-madLibsFile = open('C:/Users/rybbo/Desktop/Code/Python/automateTheBoringStuff/practiceProjects/madLibs/madLibs.txt')
+madLibsFile = open('madLibs.txt')
 
 madLibsContent = madLibsFile.read()
 
@@ -38,7 +38,7 @@ finalMadLib = madLib.replace(' .', '.')
 
 print(finalMadLib)
 
-newMadLibsFile = open('C:/Users/rybbo/Desktop/Code/Python/automateTheBoringStuff/practiceProjects/madLibs/newMadLibs.txt', 'w')
+newMadLibsFile = open('newMadLibs.txt', 'w')
 
 newMadLibsFile.write(finalMadLib)
 
