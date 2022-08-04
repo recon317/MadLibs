@@ -2,15 +2,16 @@ from logging import BufferingFormatter
 import re
 from pathlib import Path
 
-madLibsFile = open('madLibs.txt')
+madLibsFile = open('madLibs.txt')#open the madlibs text file
 
-madLibsContent = madLibsFile.read()
+madLibsContent = madLibsFile.read()#read the madlibs text file
 
-madList = re.split(pattern= r"[\.\n ]", string = madLibsContent)
+madList = re.split(pattern= r"[\.\n ]", string = madLibsContent)#convert to a list based on regex of text file
 
-madLibsFile.close()
+madLibsFile.close()#close file
 
-for i in range(len(madList)):
+
+for i in range(len(madList)): #iterate through list replacing every instance with user input
     if madList[i] == 'ADJECTIVE':
         print('Please enter an adjective:')
         newAdj = input()
@@ -26,19 +27,19 @@ for i in range(len(madList)):
         newVerb = input()
         madList[i] = newVerb
     
-    if madList[i] == '':
+    if madList[i] == '': #to fix the periods
         madList[i] = '.'
 
 
 #print(madList)
 
-madLib = ' '.join(madList)
+madLib = ' '.join(madList) #making it into a string again
 
-finalMadLib = madLib.replace(' .', '.')
+finalMadLib = madLib.replace(' .', '.') #fixing the periods
 
-print(finalMadLib)
+print(finalMadLib) #prints final mad lib
 
-newMadLibsFile = open('newMadLibs.txt', 'w')
+newMadLibsFile = open('newMadLibs.txt', 'w') #creating new file for new mad lib
 
 newMadLibsFile.write(finalMadLib)
 
